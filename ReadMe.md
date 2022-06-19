@@ -17,6 +17,7 @@ npx cypress run --env "username={$email},password={$password}"
 ```
 
 ## To improve:
+- Fix logout between tests issue (now have to login before every test)
 - Add login via API
 - Delete test data before tests via API
 - Add reporting

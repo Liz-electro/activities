@@ -15,5 +15,4 @@ Cypress.Commands.add('loginAPI', (username, password) => {
 Cypress.Commands.add('login', (email = Cypress.env('username'),
                                password = Cypress.env('password')) => {
     loginToUI.login(email, password);
-
 })

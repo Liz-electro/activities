@@ -1,3 +1,5 @@
+
+
 export function deleteTestDataIfExist() {
     cy.get('body').then((body) => {
         if (body.find('[data-test="table-header-select-all"]').length > 0) {

@@ -4,7 +4,7 @@ import activitiesPage from "../pages/ActivitiesPage";
 const activities = new activitiesPage();
 
 describe('User should have an ability to create activities', () => {
-    before(() => {
+    beforeEach(() => {
         cy.login();
 
         activities.open();
@@ -12,10 +12,6 @@ describe('User should have an ability to create activities', () => {
         deleteTestDataIfExist();
     })
 
-    beforeEach(() => {
-        Cypress.Cookies.preserveOnce('session_id', 'remember_token')
-        activities.open();
-    })
 
 
     it('User should have a possibility to see correct Activities page', () => {

@@ -52,7 +52,7 @@ describe('User should have  a possibility to create activities', () => {
 
     })
 
-    it('User should have a possibility to create a Email', () => {
+    it('User should have a possibility to create an Email', () => {
 
         activities.addNewActivity('Email');
 

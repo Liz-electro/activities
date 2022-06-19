@@ -1,0 +1,14 @@
+{"name": "activities",
+  "version": "1.0.0",
+  "description": "Automated tests for Activities functionality",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run"
+  },
+  "keywords": [],
+  "author": "Elizaveta Miroshnik",
+  "devDependencies": {
+    "cypress": "^10.1.0"
+  }
+}

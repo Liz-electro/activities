@@ -1,4 +1,4 @@
-import {deleteTestDataIfExist} from "../support/help";
+import {deleteTestDataIfExists} from "../support/help";
 import activitiesPage from "../pages/ActivitiesPage";
 
 const activities = new activitiesPage();
@@ -9,7 +9,7 @@ describe('User should have an ability to update created activities', () => {
 
         activities.open();
 
-        deleteTestDataIfExist();
+        deleteTestDataIfExists();
     })
 
     it('User should have a possibility to update created Activity directly', () => {
@@ -36,7 +36,5 @@ describe('User should have an ability to update created activities', () => {
         activities.editActivityName('New call');
 
         activities.verifyCreated('New call');
-
-
     })
 })

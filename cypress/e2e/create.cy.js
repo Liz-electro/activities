@@ -1,22 +1,22 @@
-import {deleteTestDataIfExist} from "../support/help";
+import {deleteTestDataIfExists} from "../support/help";
 import activitiesPage from "../pages/ActivitiesPage";
 
 const activities = new activitiesPage();
 
-describe('User should have an ability to create activities', () => {
+describe('User should have  a possibility to create activities', () => {
     beforeEach(() => {
         cy.login();
 
         activities.open();
 
-        deleteTestDataIfExist();
+        deleteTestDataIfExists();
     })
 
 
 
     it('User should have a possibility to see correct Activities page', () => {
 
-        cy.get('[data-test="filter-menu-button"]').should('contain', Cypress.env('username'));
+        activities.validatePage();
 
     })
 
@@ -49,6 +49,22 @@ describe('User should have an ability to create activities', () => {
         activities.addNewActivity('Deadline');
 
         activities.verifyCreated('Deadline');
+
+    })
+
+    it('User should have a possibility to create a Email', () => {
+
+        activities.addNewActivity('Email');
+
+        activities.verifyCreated('Email');
+
+    })
+
+    it('User should have a possibility to create a Lunch', () => {
+
+        activities.addNewActivity('Lunch');
+
+        activities.verifyCreated('Lunch');
 
     })
 

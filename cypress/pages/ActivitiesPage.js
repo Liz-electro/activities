@@ -8,6 +8,11 @@ class activitiesPage {
         })
     }
 
+    validatePage() {
+        cy.get('[data-test="filter-menu-button"]').should('contain', Cypress.env('username'));
+        expect(cy.get('[data-test="addButton-button"]')).to.exist;
+    }
+
     addNewActivity(activityType) {
         cy.get('[data-test="addButton-button"]').click({force: true});
 
@@ -38,6 +43,7 @@ class activitiesPage {
 
     verifyCreated(activityType) {
         cy.get('[data-test="subject-label"]').should('have.text', activityType + 'New');
+        cy.get('#icon-sm-ac-' + activityType.toLowerCase()).should('exist');
     }
 
     deleteActivities() {
@@ -47,7 +53,7 @@ class activitiesPage {
     }
 
     verifyNoActivitiesExist() {
-        cy.get('.warningMessage').should('have.text', 'No activities found');
+        cy.get('.warningMessage').should('have.text', '\'\\n\\t\\t\\tNo activities found\\n\\t\\t\\t\\n\\t\\t\\t\\tTry resetting your filters or create new activity\\n\\t\\t\\t\\n\\t\\t');
     }
 
     editActivityName(newName) {
@@ -57,14 +63,14 @@ class activitiesPage {
         cy.get('[data-test="subject-save"]').click();
     }
 
-    editActivity(newName){
+    editActivity(newName) {
         cy.get('[data-test="subject-label"] > a').click({force: true});
 
         cy.get('[data-test="activity-subject"]').clear().type(newName);
         cy.get('[data-test="save-activity-button"]').click();
     }
 
-    bulkEditActivity(newName){
+    bulkEditActivity(newName) {
         cy.get('[data-test="table-header-select-all"]').click({force: true});
         cy.get('[data-coachmark="bulk-edit-subject"] > .cui5-select > .cui5-select__box > span').click({force: true});
 

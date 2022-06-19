@@ -53,7 +53,8 @@ class activitiesPage {
     }
 
     verifyNoActivitiesExist() {
-        cy.get('.warningMessage').should('have.text', '\'\\n\\t\\t\\tNo activities found\\n\\t\\t\\t\\n\\t\\t\\t\\tTry resetting your filters or create new activity\\n\\t\\t\\t\\n\\t\\t');
+        cy.get('.warningMessage')
+            .should('contain.text', 'Try resetting your filters or create new activity');
     }
 
     editActivityName(newName) {

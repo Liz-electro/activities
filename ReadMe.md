@@ -1,7 +1,7 @@
 # Automated test cases for Activities flow
 
 I chose Activity feature to write test cases for. 
-Create, update are delete (with bulk) tests cases are presented as a most critical ones.
+Create, update are delete (with bulk) tests cases are presented as the most critical ones.
 
 
 ## Technologies:
